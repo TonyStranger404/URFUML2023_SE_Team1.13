@@ -1,9 +1,16 @@
-from transformers import pipeline
-import scipy
+import torchaudio
+from speechbrain.pretrained import Tacotron2
+from speechbrain.pretrained import HIFIGAN
 
-synthesiser = pipeline("text-to-speech", "suno/bark")
+# Intialize TTS (tacotron2) and Vocoder (HiFIGAN)
+tacotron2 = Tacotron2.from_hparams(source="speechbrain/tts-tacotron2-ljspeech", savedir="tmpdir_tts")
+hifi_gan = HIFIGAN.from_hparams(source="speechbrain/tts-hifigan-ljspeech", savedir="tmpdir_vocoder")
 
-speech = synthesiser("Hello, my dog is cooler than you!", forward_params={"do_sample": True})
+# Running the TTS
+mel_output, mel_length, alignment = tacotron2.encode_text("Mary had a little lamb")
 
-scipy.io.wavfile.write("bark_out.wav", rate=speech["sampling_rate"], data=speech["audio"])
+# Running Vocoder (spectrogram-to-waveform)
+waveforms = hifi_gan.decode_batch(mel_output)
 
+# Save the waverform
+torchaudio.save('example_TTS.wav',waveforms.squeeze(1), 22050)
