@@ -4,5 +4,4 @@ Created by:
 Kravtsov A.V.  
 
 Edited by:
-
 Chashnikov S.Y.
