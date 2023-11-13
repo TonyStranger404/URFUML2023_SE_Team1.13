@@ -1,15 +1,13 @@
-from transformers import MarianMTModel, MarianTokenizer
+!pip install transformers
+!pip install sacremoses
 
-# Инициализация предобученной модели и токенизатора
-model_name = "Helsinki-NLP/opus-mt-ru-en"
-tokenizer = MarianTokenizer.from_pretrained(model_name)
-model = MarianMTModel.from_pretrained(model_name)
+from transformers import FSMTForConditionalGeneration, FSMTTokenizer
+mname = "facebook/wmt19-ru-en"
+tokenizer = FSMTTokenizer.from_pretrained(mname)
+model = FSMTForConditionalGeneration.from_pretrained(mname)
 
-# Текст для перевода
-text_ru = "Привет, как дела?"
-
-# Получение перевода
-translated_text = model.generate(**tokenizer(text_ru, return_tensors="pt"))
-translated_text = tokenizer.decode(translated_text[0], skip_special_tokens=True)
-
-print("Перевод на английский:", translated_text)
+input = "Это твоя первая программа?"
+input_ids = tokenizer.encode(input, return_tensors="pt")
+outputs = model.generate(input_ids)
+decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(decoded)
