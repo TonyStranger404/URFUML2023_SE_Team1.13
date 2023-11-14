@@ -1,16 +1,13 @@
-import torchaudio
-from speechbrain.pretrained import Tacotron2
-from speechbrain.pretrained import HIFIGAN
+import io
+import streamlit as st
+from transformers import pipeline
 
-# Intialize TTS (tacotron2) and Vocoder (HiFIGAN)
-tacotron2 = Tacotron2.from_hparams(source="speechbrain/tts-tacotron2-ljspeech", savedir="tmpdir_tts")
-hifi_gan = HIFIGAN.from_hparams(source="speechbrain/tts-hifigan-ljspeech", savedir="tmpdir_vocoder")
+st.title('Переводчик с английского на русский')
 
-# Running the TTS
-mel_output, mel_length, alignment = tacotron2.encode_text("Mary had a little lamb")
+res = st.text_input('Пожалуйста введите текст')
 
-# Running Vocoder (spectrogram-to-waveform)
-waveforms = hifi_gan.decode_batch(mel_output)
-
-# Save the waverform
-torchaudio.save('example_TTS.wav',waveforms.squeeze(1), 22050)
+en_ru_translator = pipeline("translation_en_to_ru", 'Helsinki-NLP/opus-mt-en-ru')
+trans = en_ru_translator(res)
+st.write('Перевод')
+for i in trans:
+    st.write(i['translation_text'])
