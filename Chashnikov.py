@@ -2,7 +2,7 @@ import io
 import streamlit as st
 from transformers import pipeline
 
-st.title('Переводчик с английского на русский')
+st.title(' Переводчик с английского на русский ')
 
 res = st.text_input('Пожалуйста введите текст')
 
