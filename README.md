@@ -4,7 +4,7 @@ Created by:
 Kravtsov A.V.  
 ilin v.  
 Salov A.S.  
-Chashnikov S.
+Chashnikov S.Y.
 
 ---
 
@@ -39,4 +39,4 @@ pip install watchdog - отслеживает изменение в коде и 
 Инструкция Chashnikov.py
 
 Приложение предназначено для перевода текста с английского на русский. Создано на основе модели 'Helsinki-NLP/opus-mt-en-ru'.
-Для запуска требуется установка transformers и streamlit
+Для запуска требуется установка transformers, streamlit, tensorflow
