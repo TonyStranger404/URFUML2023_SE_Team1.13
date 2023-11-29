@@ -13,8 +13,14 @@ Chashnikov S.Y.
 1. Установить зависимости transformers и streamlit
 2. Запустить скрипт из терминала командой streamlit run Kravtsov_main.py
 
-Приложение предназначено для определения доминирующей эмоции в тексте. Создано на основе модели "seara/rubert-tiny2-ru-go-emotions".
+Приложение предназначено для определения доминирующей эмоции в тексте. Создано на основе модели "seara/rubert-tiny2-ru-go-emotions".  
+  
+<br>
 
+Инструкция Kravtsov_fastAPI.py:  
+1. Установить зависимости командой pip install Kravtsov_requirements.txt
+2. Запустить скрипт из терминала командой uvicorn Kravtsov_fastAPI:app
+3. Отправить запрос: curl -X POST http://127.0.0.1:8000/predict/ -H 'Content-Type: application/json' -d '{"text": "I hate machine learning engineering!"}'
 ---
 
 Инструкция ilin_vik_web_hw2.py
