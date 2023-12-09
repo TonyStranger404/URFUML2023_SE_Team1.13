@@ -3,7 +3,6 @@
 from fastapi import FastAPI
 from transformers import pipeline
 from pydantic import BaseModel
-import sentencepiece
 
 # Создаем класс с полем текста, который будем переводить
 class Item(BaseModel):
