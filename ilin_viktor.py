@@ -1,5 +1,5 @@
-!pip install transformers
-!pip install sacremoses
+pip install transformers
+pip install sacremoses
 
 from transformers import FSMTForConditionalGeneration, FSMTTokenizer
 mname = "facebook/wmt19-ru-en"
