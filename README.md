@@ -15,6 +15,7 @@ Chashnikov S.Y.
 
 Приложение предназначено для определения доминирующей эмоции в тексте. Создано на основе модели "seara/rubert-tiny2-ru-go-emotions".  
   
+Версия в облаке: https://kravtsov.streamlit.app/  
 <br>
 
 Инструкция Kravtsov_fastAPI.py:  
