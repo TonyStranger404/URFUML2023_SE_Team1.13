@@ -1,9 +1,13 @@
+import io
+import streamlit as st
 from transformers import pipeline
-import scipy
 
-synthesiser = pipeline("text-to-speech", "suno/bark")
+st.title(' Переводчик с английского на русский ')
 
-speech = synthesiser("Hello, my dog is cooler than you!", forward_params={"do_sample": True})
+res = st.text_input('Пожалуйста введите текст')
 
-scipy.io.wavfile.write("bark_out.wav", rate=speech["sampling_rate"], data=speech["audio"])
-
+en_ru_translator = pipeline("translation_en_to_ru", 'Helsinki-NLP/opus-mt-en-ru')
+trans = en_ru_translator(res)
+st.write('Перевод')
+for i in trans:
+    st.write(i['translation_text'])
