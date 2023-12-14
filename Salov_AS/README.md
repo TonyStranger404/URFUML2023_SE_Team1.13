@@ -4,7 +4,7 @@
 pip install -r reqiurements.txt  
 
 Модель можно запустить командой  
-streamlit run Salov_HW3_FastApi.py  
+streamlit run Salov_HW2.py  
 
 Также модель развернута в облаке  
 https://e66werrvgmbatufyzucqma.streamlit.app/  
