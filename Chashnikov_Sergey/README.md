@@ -15,6 +15,7 @@ Chashnikov S.Y.
 transformers, <br/>
 streamlit, <br/>
 tensorflow <br/>
+Для установки используйте команду: pip install -r requirements.txt
 
 Chashnikov.py запускается с помощью команды: streamlit run Chashnikov.py <br/>
 Chashnikov.py развернуто на сервере Streamlit.io: https://myfirstml-osm2gkwevajjns2ybeebyt.streamlit.app/ <br/>
