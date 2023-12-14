@@ -19,4 +19,4 @@ tensorflow <br/>
 
 Chashnikov.py запускается с помощью команды: streamlit run Chashnikov.py <br/>
 Chashnikov.py развернуто на сервере Streamlit.io: https://myfirstml-osm2gkwevajjns2ybeebyt.streamlit.app/ <br/>
-Chashnikov_fastAPI.py запускается с помощью библиотеки FastAPI <br/>
+Chashnikov_fastAPI.py запускается с помощью библиотеки FastAPI, командой: uvicorn Chashnikov_fastAPI:app <br/>
