@@ -22,11 +22,12 @@ pip install -r requirements.txt
 ```
 
 ###Либо по отдельности
--pip install transformers
--pip install sacremose
--pip install streamlit
--pip install torch
--pip install watchdog - отслеживает изменение в коде и автоматически перезапускает его(Не обязательно ни как не влияет на работу приложения)<br/>
+
+- pip install transformers
+- pip install sacremose
+- pip install streamlit
+- pip install torch
+- pip install watchdog - отслеживает изменение в коде и автоматически перезапускает его(Не обязательно ни как не влияет на работу приложения)<br/>
 
 ---
 
@@ -46,6 +47,6 @@ pip install -r requirements.txt
 
 ## Это приложение развернуто на сервере Streamlit
 
-[StreamlitAPP](https://gdwffgpvxv8wjaje4jkmur.streamlit.app)
+[StreamlitAPP](https://ep5us9zjrjsbprfibektrn.streamlit.app)
 
 [Сам код можно посмотреть тут](/viktor_ilin/PJ-ST/work_app.py)
