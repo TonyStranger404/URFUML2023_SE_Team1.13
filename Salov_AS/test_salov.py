@@ -13,7 +13,6 @@ def test_read_main():
 def test__translate_first():
     response = client.post("/predict/", json={"text": "Как у тебя дела?"})
     json_data = response.json()
-#print(json_data)
     assert response.status_code == 200
     assert json_data['translation_text'] == 'How are you doing?'
 

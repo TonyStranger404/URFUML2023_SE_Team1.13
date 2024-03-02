@@ -10,7 +10,7 @@ class Item(BaseModel):
 
 
 app = FastAPI()
-translator = pipeline("translation_ru_to_en" , "Helsinki-NLP/opus-mt-ru-en")
+translator = pipeline("translation_ru_to_en", "Helsinki-NLP/opus-mt-ru-en")
 
 
 @app.get("/")
